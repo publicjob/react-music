@@ -1,13 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import Home from 'pages/Home/'
-import 'styles/reset.css'
-import 'styles/global.css'
+import Router from './router'
+import 'style/reset.css'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
+    <Router/>,
   document.getElementById('root')
 );

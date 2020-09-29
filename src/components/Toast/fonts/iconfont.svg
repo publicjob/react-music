@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="caozuochenggong" unicode="&#59384;" d="M376.87958 282.097122 158.344355 461.137845 61.411675 379.974313l377.931538-401.503397C504.790808 152.298917 710.793602 492.277052 962.587302 733.914438l-23.063275 55.614645C665.199171 614.05049 466.434222 393.327436 376.87958 282.097122z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

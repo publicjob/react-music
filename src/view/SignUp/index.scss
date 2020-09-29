@@ -1,0 +1,129 @@
+.signUp {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 4vw 12vw 0 12vw;
+  .s-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .header-back {
+      width: 9.6vw;
+      height: 2.91vw;
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .header-info {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 15.73vw;
+      padding: 0 12.26vw;
+      .info-logo {
+        width: 4.8vw;
+        height: 5.33vw;
+        & img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .info-title {
+        display: flex;
+        flex-direction: column;
+        & span {
+          font-size: 9.6vw;
+          color: #ffffff;
+          text-align: center;
+        }
+        & span:first-child {
+          margin-top: 4vw;
+        }
+
+      }
+      .info-brief {
+        margin-top: 3.46vw;
+        text-align: center;
+        & span {
+          font-size: 4.26vw;
+          color: #ffffff;
+          opacity: 60%;
+          text-align: center;
+        }
+      }
+
+    }
+  }
+  .s-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .middle-form {
+      box-sizing: border-box;
+      margin: 8vw 0;
+      & form {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        & .form-item {
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 76vw;
+          height: 11.2vw;
+          background-color: #000000;
+          border-bottom: 0.26vw solid rgba(255,255,255,.5);
+          & label {
+            align-self: flex-end;
+            width: 17.8vw;
+            margin-right: 2vw;
+            vertical-align: bottom;
+            color: #ffffff;
+            opacity: 60%;
+          }
+          & input {
+            flex: 1;
+            align-self: flex-end;
+            padding: 0 1.5vw;
+            border: none; 
+            outline: none;
+            font-size: 4.5vw;
+            background-color: #000000;
+            color: #ffffff;
+          }
+          & button {
+            height: 8vw;
+            width: 40vw;
+            margin-right: 2vw;
+            border: none;
+            outline: none;
+            border-radius: 1.6vw;
+            background-color: #3B5998;
+            font-size: 4.26vw;
+            color: #ffffff;
+          }
+          .captcha-text {
+            width: 10vw;
+          }
+        } 
+      }
+    }
+    .middle-button {
+      width: 76vw;
+      height: 12.8vw;
+      & button {
+        width: 100%;
+        height: 100%;
+        background-color: #00AC5A;
+        font-size: 4.8vw;
+        color: #ffffff;
+        border: none;
+        outline: none;
+        border-radius: 1.6vw;
+      }
+
+    }
+  }
+}
