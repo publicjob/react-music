@@ -10,13 +10,12 @@ module.exports = {
       ...config.resolve.alias,
       '@': resolve('src'),
       'components': resolve('src/components'),
-      'view': resolve('src/view'),
       'style': resolve('src/style'),
+      'view': resolve('src/view'),
+      'service': resolve('src/service'),
+      'business': resolve('src/business'),
       'util': resolve('src/util'),
-      'api': resolve('src/api'),
-      'store': resolve('src/store'),
-      'request': resolve('src/request'),
-      'business': resolve('src/business')
+      'store': resolve('src/store')  
     };
     return config;
   }
