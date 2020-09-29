@@ -10,7 +10,6 @@ const useUrl = (hosts, env) => {
 
 axios.defaults.baseURL = useUrl(hosts, env)
 axios.interceptors.request.use(config => {
-
 })
 
 axios.interceptors.response.use(response => {
