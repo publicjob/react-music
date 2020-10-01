@@ -4,7 +4,7 @@ import baseURL from 'service/baseURL'
 import SignUpAPIS from './api'
 import BaseModule from 'service/baseModule'
 // TODO: 这样子封装还是有缺点就是哪一天不需要axios了换成fetch又要重新封装了
-class SignUp extends BaseModule{
+class SignUp extends BaseModule {
   // eslint-disable-next-line no-useless-constructor
   constructor() {
     super()

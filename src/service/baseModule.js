@@ -21,7 +21,7 @@ class BaseModule {
       return response
     })
   }
-  //通用的统一的get请求
+  //暴露所有业务使用的post方法，统一使用$get为业务功能的get网络请求
   $get({ url, params }) {
     return new Promise((resolve, reject) => {
       this.$http({
@@ -31,7 +31,7 @@ class BaseModule {
       }).then(response => resolve(response)).catch(error => reject(error))
     })
   }
-  //通用的统一的post请求
+  //暴露所有业务使用的post方法，统一使用$post为业务功能的post网络请求
   $post({ url, data }) {
     return new Promise((resolve, reject) => {
       this.$http({
