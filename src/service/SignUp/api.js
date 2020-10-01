@@ -1,4 +1,4 @@
-
+//定义SignUp注册模块的请求API
 const API = {
   validatePhoneRegistered: '/cellphone/existence/check', //检测手机号是否已经注册
   sendCaptcha: '/captcha/sent',//向指定手机号发送验证码
