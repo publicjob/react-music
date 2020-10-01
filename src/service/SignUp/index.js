@@ -50,10 +50,4 @@ class SignUp extends BaseModule {
   }
 }
 
-const SignUpService = new SignUp()
-SignUpService.useRequestInterceptors(config => {
-  console.log('requestInterceptors is unlocked!')
-  return config
-})
-
-export default SignUpService
+export default new SignUp()

@@ -22,7 +22,7 @@ class Toast extends Component {
         in={this.state.isShow}
       >
         <div className="toast">
-          <i className="iconfont icon-caozuochenggong"></i>
+          <i className={`iconfont ${ this.props.type === 'success' ? 'icon-caozuochenggong' : 'icon-shibai' }`}></i>
           <span>{this.props.text}</span>
         </div>
       </CSSTransition>
@@ -33,19 +33,27 @@ class Toast extends Component {
 
 const ToastComponent = function () {
   const ToastRef = createRef()
-  let count = 0
-  const info = (text) => {
-    console.log(count++)
-    const container = document.createElement('container')
+  const success = (text) => {
+    const container = document.createElement('div')
     document.body.appendChild(container)
-    ReactDOM.render(<Toast ref={ToastRef} isShow={true} text={text} />, container)
+    ReactDOM.render(<Toast ref={ToastRef} isShow={true} text={text} type="success"/>, container)
     setTimeout(() => {
       ReactDOM.unmountComponentAtNode(container)
       document.body.removeChild(container)
-    }, 2000)
+    }, 3000)
+  }
+  const error = (text) => {
+    const container = document.createElement('div')
+    document.body.appendChild(container)
+    ReactDOM.render(<Toast ref={ToastRef} isShow={true} text={text} type="error"/>, container)
+    setTimeout(() => {
+      ReactDOM.unmountComponentAtNode(container)
+      document.body.removeChild(container)
+    }, 3000)
   }
   return {
-    info
+    success,
+    error
   }
 }()
 

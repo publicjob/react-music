@@ -22,20 +22,32 @@ const SignUp = () => {
   const validateIsSignUp = (e) => {
     console.log(e.target.value)
   }
-  const sendCaptcha = (e) => {
-    e.preventDefault()
-    SignUpService.sendCaptcha(14754553378).then(res => {
-      Toast.info("Verification code sent successfully!")
-      console.log(res)
+  const sendCaptcha = (event) => {
+    event.preventDefault()
+    event.stopPropagation()
+    Toast.success("Verification code sent successfully!")
+    SignUpService.sendCaptcha(14754553378).then(response => {
+      
+      console.log(response)
     }).catch(error => {
 
     })
     
   }
-  const signUp = (e) => {
-    e.preventDefault()
-    setSignUp(true)
-    
+  const signUp = (event) => {
+    event.preventDefault()
+    SignUpService.useRequestInterceptors(config => {
+      setSignUp(true)
+      return config
+    })
+    SignUpService.register().then(response => {
+      setSignUp(false)
+    }).catch(error => {
+      setTimeout(_ => {
+         setSignUp(false)
+         Toast.error('request error！please try again!')
+      }, 5000)
+    })
   }
   return (
     <div className="signUp">
