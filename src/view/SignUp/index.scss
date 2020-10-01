@@ -105,6 +105,19 @@
             font-weight: 400;
             color: #ffffff;
           }
+          .button-disabled {
+            height: 8vw;
+            width: 25vw;
+            margin-right: 2vw;
+            border: none;
+            outline: none;
+            border-radius: 1.6vw;
+            background-color: rgb(61, 129, 211);
+            font-size: 3vw;
+            font-weight: 400;
+            color: #ffffff;
+            opacity: 0.5;
+          }
           .captcha-text {
             width: 10vw;
           }

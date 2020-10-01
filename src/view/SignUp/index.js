@@ -15,7 +15,7 @@ const SignUp = () => {
   const captchaRef = useRef()
   const history = useHistory()
   const [isSignUp, setSignUp] = useState(false)
-
+  const [isDisabled, setDisabled] = useState(false)
   const backHome = () => {
     history.push('/')
   }
@@ -25,13 +25,21 @@ const SignUp = () => {
   const sendCaptcha = (event) => {
     event.preventDefault()
     event.stopPropagation()
-    Toast.success("Verification code sent successfully!")
-    SignUpService.sendCaptcha(14754553378).then(response => {
+    setDisabled(true)
+    Toast.success('Captcha sent successfully!')
+      setTimeout(_ => setDisabled(false), 60000)
+    SignUpService.useResponseInterceptors(response => {
       
-      console.log(response)
-    }).catch(error => {
-
+      return response
+    }, error => {
+      Toast.error('Captcha sent failed!')
     })
+    console.log(1111)
+    // SignUpService.sendCaptcha(14754553378).then(response => {
+    //   console.log(response)
+    // }).catch(error => {
+
+    // })
     
   }
   const signUp = (event) => {
@@ -84,7 +92,7 @@ const SignUp = () => {
               <input ref={passwordRef} type="text"/>
             </div>
             <div className="form-item">
-              <button onClick={sendCaptcha}>send captcha</button>
+              <button onClick={sendCaptcha} disabled={isDisabled} className={`${isDisabled ? 'button-disabled' : ''}`}>send captcha</button>
               <input className="captcha-text" ref={captchaRef} type="text"/>
             </div>
             <div className="form-button">
