@@ -7,17 +7,17 @@ class BaseModule {
       baseURL: baseURL
     })
   }
-  //启用请求拦截器
-  useRequestInterceptors(callback) {
+  //对axios实例启用请求拦截器
+  useRequestInterceptors(handleConfig) {
     this.$http.interceptors.request.use(config => {
-      config = callback(config)
+      config = handleConfig(config)
       return config
     })
   }
-  //启用响应拦截器
-  useResponseInterceptors(callback) {
+  //对axios实例启用响应拦截器
+  useResponseInterceptors(handleResponse) {
     this.$http.interceptors.response.use(response => {
-      response = callback(response)
+      response = handleResponse(response)
       return response
     })
   }
