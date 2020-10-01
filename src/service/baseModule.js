@@ -33,24 +33,13 @@ class BaseModule {
   }
   //通用的统一的post请求
   $post({ url, data }) {
-    const normalizeData = (data) => {
-      
-    }
     return new Promise((resolve, reject) => {
       this.$http({
         method: 'post',
         url: url,
         data: data
-      })
+      }).then(response => resolve(response)).catch(error => reject(error))
     })
-  }
-  //通用的统一的put请求
-  $put() {
-
-  }
-  //通用的统一的delete请求
-  $delete() {
-
   }
 }
 
