@@ -4,8 +4,9 @@ import { useHistory } from 'react-router-dom'
 import arrowUrl from './images/Arrow-Down@2x.png'
 import userUrl from './images/User@2x.png'
 import Toast from 'components/Toast'
+import Mask from 'components/Mask'
+import SignUpService from 'service/SignUp'
 import './index.scss'
-import validate from 'util/validate'
 
 const SignUp = () => {
   const nicknameRef = useRef()
@@ -13,6 +14,8 @@ const SignUp = () => {
   const passwordRef = useRef()
   const captchaRef = useRef()
   const history = useHistory()
+  const [isSignUp, setSignUp] = useState(false)
+
   const backHome = () => {
     history.push('/')
   }
@@ -21,20 +24,18 @@ const SignUp = () => {
   }
   const sendCaptcha = (e) => {
     e.preventDefault()
-    Toast.info("Verification code sent successfully!")
-    console.log(typeof phoneRef.current.value)
-    console.log('验证码发送成功')
-    // const url = `http://localhost:3000/captcha/sent?phone=13556121070`
-    // fetch(url).then(res => res.json()).then(res => console.log(res)
+    SignUpService.sendCaptcha(13556121070).then(res => {
+      Toast.info("Verification code sent successfully!")
+      console.log(res)
+    }).catch(error => {
+
+    })
+    
   }
   const signUp = (e) => {
     e.preventDefault()
-    console.log(e.target)
-    console.log(nicknameRef.current.value)
-    console.log(phoneRef.current.value)
-    console.log(passwordRef.current.value)
-    console.log(captchaRef.current.value)
-
+    setSignUp(true)
+    
   }
   return (
     <div className="signUp">
@@ -80,6 +81,7 @@ const SignUp = () => {
           </form>
         </div>
       </div>
+      { isSignUp && <Mask/> }
     </div>
   )
 }
