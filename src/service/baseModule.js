@@ -1,10 +1,11 @@
 import axios from 'axios'
-import baseURL from 'service/baseURL'
+import config from 'service/config'
 
 class BaseModule {
   constructor() {
     this.$http = axios.create({
-      baseURL: baseURL
+      baseURL: config.baseURL,
+      timeout: config.timeout
     })
   }
   //对axios实例启用请求拦截器

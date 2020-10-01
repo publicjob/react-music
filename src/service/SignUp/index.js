@@ -1,6 +1,5 @@
 import axios from 'axios'
 import qs from 'qs'
-import baseURL from 'service/baseURL'
 import SignUpAPIS from './api'
 import BaseModule from 'service/baseModule'
 
@@ -51,4 +50,10 @@ class SignUp extends BaseModule {
   }
 }
 
-export default new SignUp()
+const SignUpService = new SignUp()
+SignUpService.useRequestInterceptors(config => {
+  console.log('requestInterceptors is unlocked!')
+  return config
+})
+
+export default SignUpService

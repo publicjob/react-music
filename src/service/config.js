@@ -12,4 +12,8 @@ const useUrl = (hosts, env) => {
   return hosts[env]
 }
 
-export default useUrl(hosts, env)
+const timeout = 10000
+export default {
+  timeout,
+  baseURL: useUrl(hosts,env)
+}

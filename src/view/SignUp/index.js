@@ -24,7 +24,7 @@ const SignUp = () => {
   }
   const sendCaptcha = (e) => {
     e.preventDefault()
-    SignUpService.sendCaptcha(13556121070).then(res => {
+    SignUpService.sendCaptcha(14754553378).then(res => {
       Toast.info("Verification code sent successfully!")
       console.log(res)
     }).catch(error => {
