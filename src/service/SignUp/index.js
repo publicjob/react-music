@@ -1,5 +1,3 @@
-import axios from 'axios'
-import qs from 'qs'
 import SignUpAPIS from './api'
 import BaseModule from 'service/baseModule'
 

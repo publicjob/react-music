@@ -1,8 +1,12 @@
 #root {
-  height: 100vh;
+  height: calc(100vh);
   background-color: #000000
 }
 
+#root > div:first-child {
+  height: calc(100vh);
+  background-color: #000000
+}
 .fade-enter {
   opacity: 0;
   transform: translateX(100%);

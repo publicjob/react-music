@@ -9,6 +9,7 @@ import SignUpService from 'service/SignUp'
 import './index.scss'
 
 const SignUp = () => {
+  const formRef = useRef()
   const nicknameRef = useRef()
   const phoneRef = useRef()
   const passwordRef = useRef()
@@ -19,43 +20,17 @@ const SignUp = () => {
   const backHome = () => {
     history.push('/')
   }
-  const validateIsSignUp = (e) => {
-    console.log(e.target.value)
-  }
   const sendCaptcha = (event) => {
     event.preventDefault()
     event.stopPropagation()
-    setDisabled(true)
+    // setDisabled(true)
+    console.log(formRef.current.nickname.value)
+    console.log(formRef.current.password.value)
+    console.log(formRef.current.phone.value)
     Toast.success('Captcha sent successfully!')
-      setTimeout(_ => setDisabled(false), 60000)
-    SignUpService.useResponseInterceptors(response => {
-      
-      return response
-    }, error => {
-      Toast.error('Captcha sent failed!')
-    })
-    console.log(1111)
-    // SignUpService.sendCaptcha(14754553378).then(response => {
-    //   console.log(response)
-    // }).catch(error => {
-
-    // })
-    
   }
   const signUp = (event) => {
     event.preventDefault()
-    SignUpService.useRequestInterceptors(config => {
-      setSignUp(true)
-      return config
-    })
-    SignUpService.register().then(response => {
-      setSignUp(false)
-    }).catch(error => {
-      setTimeout(_ => {
-         setSignUp(false)
-         Toast.error('request error！please try again!')
-      }, 5000)
-    })
   }
   return (
     <div className="signUp">
@@ -78,18 +53,18 @@ const SignUp = () => {
       </div>
       <div className="s-middle">
         <div className="middle-form">
-          <form  onSubmit={signUp}>
+          <form  onSubmit={signUp} ref={formRef}>
             <div className="form-item">
-              <label>Nickname</label>
-              <input  ref={nicknameRef} type="text"/>
+              <label className="item-title">Nickname:</label>
+              <input type="text" className="nickname" name="nickname"/>
             </div>
             <div className="form-item">
-              <label>Phone</label>
-              <input ref={phoneRef} type="text" onBlur={validateIsSignUp}/>
+              <label className="item-title">Password:</label>
+              <input type="text" name="password"/>
             </div>
             <div className="form-item">
-              <label>Password</label>
-              <input ref={passwordRef} type="text"/>
+              <label className="item-title">Phone:</label>
+              <input type="text" name="phone"/>
             </div>
             <div className="form-item">
               <button onClick={sendCaptcha} disabled={isDisabled} className={`${isDisabled ? 'button-disabled' : ''}`}>send captcha</button>

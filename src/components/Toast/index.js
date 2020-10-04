@@ -30,7 +30,6 @@ class Toast extends Component {
   }
 }
 
-
 const ToastComponent = function () {
   const ToastRef = createRef()
   const success = (text) => {

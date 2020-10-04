@@ -28,7 +28,7 @@
 
   ```js
   import axios from 'axios'
-  const env = process.env.NODE_ENV
+  const env = process.env.NODE_ENV //个人觉得实际工程这么做有安全问题，不应该让这种环境变量代码放在浏览器跑！！
   const hosts = {
     'development': 'http://localhost:3000',
     'production': 'http://localhost:3000'
