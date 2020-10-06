@@ -10,9 +10,6 @@ import './index.scss'
 
 const SignUp = () => {
   const formRef = useRef()
-  const nicknameRef = useRef()
-  const phoneRef = useRef()
-  const passwordRef = useRef()
   const captchaRef = useRef()
   const history = useHistory()
   const [isSignUp, setSignUp] = useState(false)
@@ -31,6 +28,11 @@ const SignUp = () => {
   }
   const signUp = (event) => {
     event.preventDefault()
+    SignUpService.useRequestInterceptors(config => {
+      setSignUp(true)
+      return config
+    })
+    SignUpService.register().then(res => res).catch(err => { Toast.error('别来无恙！'); setSignUp(false) })
   }
   return (
     <div className="signUp">
