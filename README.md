@@ -17,7 +17,8 @@
 ## 编码开发
 ### 后端开发
 * 编码的开发此次由于工作量较大，后端开发阶段将暂时使用当前GitHub上火热🔥的NeteaseCloud项目作为我们的后端接口服务器,后期会根据该项目进行后端重写。
-* 接口文档地址：https://neteasecloudmusicapi.vercel.app/
+* 接口文档地址：https://documenter.getpostman.com/view/12447675/TVRj485y
+
 ### 前端开发
 * 前端开发技术栈选型将选用React全家桶配合create-react-app脚手架。
 * 编码开发中对页面使用到的一些常见的公共组件将自行开发，目的是为了挑战自我的逻辑封装能力。
